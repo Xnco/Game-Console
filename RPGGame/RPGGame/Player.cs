@@ -11,6 +11,8 @@ namespace RPGGame
         public Player(string name)
         {
             mName = name;
+
+            Console.WriteLine("孩子, 当你出生的时候, 洛丹伦的森林轻声唤出了你的名字, {0}~", name);
         }
 
         private string mName;

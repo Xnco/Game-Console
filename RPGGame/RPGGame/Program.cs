@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RPGGame
@@ -11,8 +12,24 @@ namespace RPGGame
         static void Main(string[] args)
         {
 
-            Console.WriteLine("游戏开始了");
-        
+            //Console.WriteLine("请输入勇士的名字开始游戏");
+            //Player mPlayer = new Player(Console.ReadLine());
+            //GameManager.GetSingle().mPlayer = mPlayer;
+
+            //Console.Write("按任意键开始游戏...");
+            //Console.ReadKey();
+            GameManager.GetSingle().Home();
+
+            //Thread t = new Thread(Input);
+            //t.Start();
         }
+        
+        //static void Input()
+        //{
+        //    while (true)
+        //    {
+        //        GameManager.GetSingle().Home(Console.ReadKey());
+        //    }
+        //}
     }
 }
