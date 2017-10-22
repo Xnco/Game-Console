@@ -17,7 +17,7 @@ namespace RPGGame
             bool isPlaying = true;
             while (isPlaying)
             {
-                isPlaying = mManager.InputScene(Console.ReadKey(true));
+                isPlaying = mManager.InputScnee(Console.ReadKey(true));
             }
         }
     }

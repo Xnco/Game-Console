@@ -21,38 +21,25 @@ namespace RPGGame
 
         private GameManager()
         {
-            Init();
+            // 加载本地文件
+
+            // 初始化场景状态机
+            InitFSM();
         }
 
         public Player mPlayer;
 
-        /// <summary>
-        /// 保存所有场景
-        /// </summary>
-        Dictionary<string, Scene> allScene;
-        /// <summary>
-        /// 当前所在场景
-        /// </summary>
-        Scene CurScene;
+        private StateMachine mState;
 
-        /// <summary>
-        /// 初始化游戏
-        /// </summary>
-        public void Init()
-        {
-            // 加载本地文件
-
-            // 初始化所有场景
-            InitScene();
-        }
-
-        public void InitScene()
+        void InitFSM()
         {
             // 初始化需要的界面
-            allScene = new Dictionary<string, Scene>();
-            allScene.Add("Start", new Start()); // 开始界面
-            allScene.Add("Home", new Home()); // Home界面
-            allScene.Add("Adventure", new Adventure()); // 探险界面
+            mState = new StateMachine();
+           
+            mState.Add(new Start(mState)); // 开始界面
+            mState.Add(new Home(mState)); // Home界面
+            mState.Add(new Adventure(mState)); // 探险界面
+
             Console.WriteLine("...");
             Console.WriteLine("所有界面初始化完成, 按任意键继续...");
             Console.ReadKey(true);
@@ -61,40 +48,14 @@ namespace RPGGame
             ChangedScene(AppConst.InitScene);
         }
 
-        // 切换界面
-        public void ChangedScene(string varName)
+        public bool InputScnee(ConsoleKeyInfo key)
         {
-            Scene scene;
-            if (allScene.TryGetValue(varName, out scene))
-            {
-                CurScene = scene;
-                CurScene.Init();
-            }
-            else
-            {
-                OutputError("切换场景失败, 没有这个场景");
-            }
+             return mState.InputScene(key);
         }
 
-        // 界面接受指令
-        public bool InputScene(ConsoleKeyInfo key)
+        public void ChangedScene(string name)
         {
-            if (CurScene != null)
-            {
-                return CurScene.Input(key);
-            }
-            else
-            {
-                OutputError("接受失败, 当前场景错误");
-                return true;
-            }
-        }
-
-        public void OutputError(string error)
-        {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine(error);
-            Console.BackgroundColor = ConsoleColor.Black;
+            mState.ChangedScene(name);
         }
     }
 }

@@ -12,12 +12,14 @@ namespace RPGGame
     public abstract class Scene
     {
         public string name;
+        public StateMachine mFSM;
 
-        public Scene()
+        public Scene(StateMachine fsm)
         {
             string[] tmp = this.GetType().FullName.Split('.') ;
             name = tmp[1];// 获取类名
             Console.WriteLine("初始化{0}场景成功", name);
+            mFSM = fsm;
         }
 
         /// <summary>
@@ -41,6 +43,8 @@ namespace RPGGame
             Console.WriteLine("输入错误!!!!只能按上面出现的指令, 其他指令无效!!!");
             Console.WriteLine("请再重新输入指令!");
             Console.BackgroundColor = ConsoleColor.Black;
+
+
         }
 
         /// <summary>
@@ -72,7 +76,7 @@ namespace RPGGame
 
     public class Start : Scene
     {
-        public Start() 
+        public Start(StateMachine fsm) : base(fsm)
         {
             //Console.WriteLine("初始化Start场景");
         }
@@ -88,14 +92,14 @@ namespace RPGGame
 
         public override bool Input(ConsoleKeyInfo key)
         {
-            Console.WriteLine("你按了{0}键, 进入 Home", key.Key);
+            // 无论按什么都直接切换到下一个场景
             return true;
         }
     }
 
     public class Home : Scene
     {
-        public Home() 
+        public Home(StateMachine fsm) : base(fsm)
         {
             //Console.WriteLine("初始化Home场景");
         }
@@ -121,7 +125,7 @@ namespace RPGGame
                     break;
                 case ConsoleKey.B:
                     // 野外
-
+                    mFSM.ChangedScene("Adventure");
                     break;
                 case ConsoleKey.C:
                     // 商店
@@ -143,7 +147,7 @@ namespace RPGGame
 
     public class Adventure : Scene
     {
-        public Adventure()
+        public Adventure(StateMachine fsm) : base(fsm)
         {
             //Console.WriteLine("初始化 Adventure 场景 ");
         }
@@ -168,6 +172,7 @@ namespace RPGGame
                     // 挑战Boss
                     break;
                 case ConsoleKey.C:
+                    mFSM.ChangedScene("Home");
                     // 回家
                     break;
                 //break;
