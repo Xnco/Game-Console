@@ -11,25 +11,14 @@ namespace RPGGame
     {
         static void Main(string[] args)
         {
+            GameManager mManager = GameManager.GetSingle();
 
-            //Console.WriteLine("请输入勇士的名字开始游戏");
-            //Player mPlayer = new Player(Console.ReadLine());
-            //GameManager.GetSingle().mPlayer = mPlayer;
-
-            //Console.Write("按任意键开始游戏...");
-            //Console.ReadKey();
-            GameManager.GetSingle().Home();
-
-            //Thread t = new Thread(Input);
-            //t.Start();
+            // 游戏运行后不停接受指令即可
+            bool isPlaying = true;
+            while (isPlaying)
+            {
+                isPlaying = mManager.InputScene(Console.ReadKey(true));
+            }
         }
-        
-        //static void Input()
-        //{
-        //    while (true)
-        //    {
-        //        GameManager.GetSingle().Home(Console.ReadKey());
-        //    }
-        //}
     }
 }

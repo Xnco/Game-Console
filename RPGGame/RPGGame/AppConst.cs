@@ -9,5 +9,10 @@ namespace RPGGame
     public static class AppConst
     {
         public static string DataPath = "";
+
+        /// <summary>
+        /// 初始界面名字
+        /// </summary>
+        public static string InitScene = "Home";
     }
 }
