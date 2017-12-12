@@ -135,6 +135,7 @@ namespace RPGGame
                     break;
                 case ConsoleKey.Q:
                     // 退出游戏
+                    Quit();
                     return false;
                 default:
                     // 输出错误
