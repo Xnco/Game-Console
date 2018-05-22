@@ -48,7 +48,10 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scene.cs" />
+    <Compile Include="Scenes\Scene.cs" />
+    <Compile Include="Scenes\Adventure.cs" />
+    <Compile Include="Scenes\Home.cs" />
+    <Compile Include="Scenes\Start.cs" />
     <Compile Include="StateMachine.cs" />
   </ItemGroup>
   <ItemGroup>

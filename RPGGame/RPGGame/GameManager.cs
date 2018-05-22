@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RPGGame.Scenes;
 
 namespace RPGGame
 {
@@ -43,9 +40,6 @@ namespace RPGGame
             Console.WriteLine("...");
             Console.WriteLine("所有界面初始化完成, 按任意键继续...");
             Console.ReadKey(true);
-
-            // 界面初始化完成后进入 初始界面
-            ChangedScene(AppConst.InitScene);
         }
 
         public bool InputScnee(ConsoleKeyInfo key)

@@ -13,6 +13,6 @@ namespace RPGGame
         /// <summary>
         /// 初始界面名字
         /// </summary>
-        public static string InitScene = "Home";
+        public static string InitScene = "Start";
     }
 }
