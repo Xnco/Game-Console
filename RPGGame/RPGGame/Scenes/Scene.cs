@@ -43,8 +43,6 @@ namespace RPGGame
             Console.WriteLine("输入错误!!!!只能按上面出现的指令, 其他指令无效!!!");
             Console.WriteLine("请再重新输入指令!");
             Console.BackgroundColor = ConsoleColor.Black;
-
-
         }
 
         /// <summary>

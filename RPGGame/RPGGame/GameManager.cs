@@ -24,6 +24,7 @@ namespace RPGGame
             InitFSM();
         }
 
+        // 主角
         public Player mPlayer;
 
         private StateMachine mState;

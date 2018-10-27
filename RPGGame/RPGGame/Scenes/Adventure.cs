@@ -8,6 +8,7 @@ namespace RPGGame.Scenes
 {
     public class Adventure : Scene
     {
+
         public Adventure(StateMachine fsm) : base(fsm)
         {
             //Console.WriteLine("初始化 Adventure 场景 ");
