@@ -1,0 +1,4 @@
+﻿1>------ 已启动生成: 项目: Minesweeping, 配置: Debug Any CPU ------
+1>F:\Anthony\GitHubProject\RPG-Game-Console\Minesweeping\Minesweeping\Box.cs(15,21,15,27): warning CS0649: 从未对字段“Box.isFlag”赋值，字段将一直保持其默认值 false
+1>  Minesweeping -> F:\Anthony\GitHubProject\RPG-Game-Console\Minesweeping\Minesweeping\bin\Debug\Minesweeping.exe
+========== 生成: 成功 1 个，失败 0 个，最新 0 个，跳过 0 个 ==========
