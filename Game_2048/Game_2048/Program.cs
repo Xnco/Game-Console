@@ -10,6 +10,12 @@ namespace Game_2048
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+
+            GameManager game = new GameManager();
+            game.InitMap();
+
+            game.GameLogic();
         }
     }
 }
