@@ -8,6 +8,7 @@ namespace Minesweeping
 {
     class GameManager
     {
+        public string[] graphics = {"  ", "①", "②", "③" , "④", "⑤", "⑥", "⑦", "⑧" };
         public static Random r = new Random();
         public Box[,] map;
         public int mineNum;
@@ -244,7 +245,7 @@ namespace Minesweeping
             }
             else if (box.num != 0)
             {
-                Draw(box.position, box.num.ToString());
+                DrawNumber(box.position, box.num);
             }
             else if (box.num == 0)   
             {
@@ -285,6 +286,13 @@ namespace Minesweeping
         {
             SetCurPoint(pos.x, pos.y);
             Console.Write(str);
+        }
+
+        public void DrawNumber(Vector2 pos, int num)
+        {
+
+            SetCurPoint(pos.x, pos.y);
+            Console.Write(graphics[num]);
         }
     }
 }

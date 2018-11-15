@@ -397,7 +397,7 @@ namespace Game_2048
 
         public void SetCurPosition(int x, int y)
         {
-            Console.SetCursorPosition(y * 8, x* 4);
+            Console.SetCursorPosition(y * 8 + 50, x* 4 + 10);
         }
 
         public void DrawNumber(int x, int y)
