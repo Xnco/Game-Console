@@ -13,3 +13,11 @@
 * 扫雷 (完成)
 * 五子棋 (完成)
 * RPG游戏 (地图状态机完成, 要补充角色战斗)
+
+## 以下给出部分游戏的gif
+### 2048
+![Image Text](https://github.com/Xnco/Console-Game/blob/master/Show/2048.gif)
+
+### 扫雷
+![Image Text](https://github.com/Xnco/Console-Game/blob/master/Show/Mainsweeping.gif)
+
