@@ -1,0 +1,14 @@
+Console.WriteLine("欢迎, 你可以进行一下操作:");
+            Console.WriteLine("a. ");
+            Console.WriteLine("b. ");
+            Console.WriteLine("c. ");
+            Console.WriteLine("d. ");
+
+ ConsoleKeyInfo tmp = Console.ReadKey();
+            switch (tmp.Key)
+            {
+                case ConsoleKey.A:
+                    break;
+                default:
+                    break;
+            }
