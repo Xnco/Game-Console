@@ -16,8 +16,8 @@
 
 ## 以下给出部分游戏的gif
 ### 2048
-![Image Text](https://github.com/Xnco/Console-Game/blob/master/Show/2048.gif)
+![Image Text](https://github.com/Xnco/Game-Console/blob/master/Show/2048.gif)
 
 ### 扫雷
-![Image Text](https://github.com/Xnco/Console-Game/blob/master/Show/Mainsweeping.gif)
+![Image Text](https://github.com/Xnco/Game-Console/blob/master/Show/Minesweeping.gif)
 
